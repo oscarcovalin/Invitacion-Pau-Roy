@@ -11,10 +11,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Open Graph for WhatsApp & Social Media Previews -->
+    <meta property="og:title" content="Nuestra Boda - Paulina Anael & Rodrigo">
+    <meta property="og:description" content="¡Estás invitado a nuestra boda! Acompáñanos en este día tan especial.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tudominio.com/">
+    <!-- Nota: WhatsApp requiere un enlace absoluto de internet (https://...) para mostrar la imagen -->
+    <meta property="og:image" content="https://tudominio.com/assets/hero_bg.jpg">
 </head>
 <body>
 
-    <!-- Hero Section -->
+    <!-- Background Music -->
+    <audio id="bg-music" loop>
+        <source src="assets/music.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <!-- Floating Music Button -->
+    <button id="music-btn" class="music-btn">
+        <i class="fa-solid fa-music"></i>
+    </button>    <!-- Hero Section -->
     <header class="hero" id="home">
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -50,19 +67,19 @@
         <div class="divider"></div>
         <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;">
             <div class="reveal">
-                <h3 style="color: var(--primary-color); margin-bottom: 10px;">Padres de la Novia</h3>
-                <p>Claudia Guadalupe Aguirre Coahonte</p>
-                <p>Oscar Pineda Lozada</p>
+                <h3 style="color: var(--primary-color); margin-bottom: 10px; font-size: 2rem;">Padres de la Novia</h3>
+                <p style="font-size: 1.5rem; line-height: 1.4;">Claudia Guadalupe Aguirre Coahonte</p>
+                <p style="font-size: 1.5rem; line-height: 1.4;">Oscar Pineda Lozada</p>
             </div>
             <div class="reveal">
-                <h3 style="color: var(--primary-color); margin-bottom: 10px;">Padres del Novio</h3>
-                <p>Angelina Córdova García</p>
-                <p>Jaime Correa Correa</p>
+                <h3 style="color: var(--primary-color); margin-bottom: 10px; font-size: 2rem;">Padres del Novio</h3>
+                <p style="font-size: 1.5rem; line-height: 1.4;">Angelina Córdova García</p>
+                <p style="font-size: 1.5rem; line-height: 1.4;">Jaime Correa Correa</p>
             </div>
         </div>
         <div style="margin-top: 40px;" class="reveal">
-            <h3 style="color: var(--primary-color); margin-bottom: 10px;">Padrinos</h3>
-            <p>Ángel Patiño y Lucila Osorio</p>
+            <h3 style="color: var(--primary-color); margin-bottom: 10px; font-size: 2rem;">Padrinos</h3>
+            <p style="font-size: 1.5rem; line-height: 1.4;">Ángel Patiño y Lucila Osorio</p>
         </div>
     </section>
 
@@ -122,6 +139,43 @@
                         <span class="time">19:00 hrs</span>
                         <h3>Recepción</h3>
                         <p>Salon Miami</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-champagne-glasses"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="time">19:30 hrs</span>
+                        <h3>Recepción del Salón</h3>
+                        <p>Cóctel de bienvenida</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="time">20:00 hrs</span>
+                        <h3>Cena y Brindis</h3>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="time">21:00 hrs</span>
+                        <h3>Primer Baile</h3>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-music"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="time">21:30 hrs</span>
+                        <h3>Inicia la Fiesta</h3>
                     </div>
                 </div>
             </div>

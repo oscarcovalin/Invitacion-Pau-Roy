@@ -49,6 +49,28 @@ window.addEventListener("scroll", reveal);
 // Trigger once on load
 reveal();
 
+// Music Player Logic
+document.addEventListener('DOMContentLoaded', function() {
+    const musicBtn = document.getElementById('music-btn');
+    const bgMusic = document.getElementById('bg-music');
+    let isPlaying = false;
+
+    if (musicBtn && bgMusic) {
+        musicBtn.addEventListener('click', function() {
+            if (isPlaying) {
+                bgMusic.pause();
+                musicBtn.classList.remove('playing');
+            } else {
+                bgMusic.play().catch(function(error) {
+                    console.log("Audio play failed", error);
+                });
+                musicBtn.classList.add('playing');
+            }
+            isPlaying = !isPlaying;
+        });
+    }
+});
+
 // URL parameters parsing for personalized invitation
 function getUrlParams() {
     const params = new URLSearchParams(window.location.search);

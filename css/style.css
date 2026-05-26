@@ -39,9 +39,11 @@
 
 html {
     scroll-behavior: smooth;
+    font-size: 125%; /* Increase base font size for the entire site */
 }
 
 body {
+    font-size: 1.2rem; /* Ensure body text is larger */
     font-family: var(--font-secondary);
     color: var(--text-color);
     background-color: var(--bg-color);
@@ -118,10 +120,11 @@ a {
 }
 
 .hero .pre-title {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     font-style: italic;
-    margin-bottom: 10px;
-    letter-spacing: 2px;
+    margin-bottom: 15px;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
 .hero .title {
@@ -133,10 +136,11 @@ a {
 }
 
 .hero .date {
-    font-size: 1.2rem;
-    font-weight: 300;
+    font-size: 2rem;
+    font-weight: 400;
     margin-bottom: 40px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
 /* Countdown */
@@ -491,7 +495,7 @@ footer h2 {
 @media (max-width: 768px) {
     .parallax-section {
         height: 40vh;
-        background-attachment: scroll; /* iOS fix */
+        background-attachment: fixed; /* Re-enabled for mobile parallax */
     }
     
     .hero .title {
@@ -719,5 +723,41 @@ footer h2 {
     
     .dress-code-flex {
         gap: 30px;
+    }
+}
+
+/* Floating Music Button */
+.music-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.music-btn:hover {
+    transform: scale(1.1);
+    background-color: #7a6a4d;
+}
+
+.music-btn.playing i {
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
     }
 }
