@@ -175,3 +175,40 @@ if (rsvpForm) {
         }, 1000);
     });
 }
+
+// Simple Parallax effect for mobile (iOS Safari fix)
+function initMobileParallax() {
+    const parallaxElements = document.querySelectorAll('.parallax-section, .hero');
+    
+    // Solo aplicar en móviles (donde background-attachment: fixed da problemas en iOS)
+    if (window.innerWidth <= 768) {
+        window.addEventListener('scroll', function() {
+            let scrolled = window.pageYOffset;
+            
+            parallaxElements.forEach(function(section) {
+                let offset = section.offsetTop;
+                let height = section.offsetHeight;
+                
+                // Si la sección está visible en pantalla
+                if (scrolled + window.innerHeight > offset && scrolled < offset + height) {
+                    let yPos = (scrolled - offset) * 0.25; // Velocidad de parallax más sutil para que no se salga de los bordes
+                    
+                    if(section.classList.contains('hero')) {
+                         section.style.setProperty('background-position', `center calc(25% + ${yPos}px)`, 'important');
+                    } else {
+                         section.style.setProperty('background-position', `center calc(50% + ${yPos}px)`, 'important');
+                    }
+                }
+            });
+        }, { passive: true });
+    } else {
+        // En desktop, limpiar estilos para usar el CSS nativo
+        parallaxElements.forEach(function(section) {
+            section.style.removeProperty('background-position');
+        });
+    }
+}
+
+// Inicializar en carga y re-evaluar en resize
+window.addEventListener('resize', initMobileParallax);
+initMobileParallax();

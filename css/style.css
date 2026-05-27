@@ -45,13 +45,22 @@ body {
     font-family: var(--font-secondary);
     color: var(--text-color);
     background-color: var(--bg-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     background-image: url('../assets/section_bg.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    line-height: 1.6;
-    overflow-x: hidden;
+    z-index: -1;
 }
 
 h1, h2, h3, h4 {
@@ -131,6 +140,7 @@ a {
     font-weight: 400;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    white-space: nowrap;
 }
 
 .hero .date {
@@ -578,9 +588,8 @@ footer h2 {
     }
 
     .parallax-section {
-        background-attachment: scroll !important; /* Fixed iOS parallax background bug */
-        background-position: center center !important;
-        height: 45vh;
+        background-attachment: scroll !important; /* Usamos JS parallax en móvil en su lugar */
+        height: 65vh; /* Aumentado para que no se corten las fotos verticales */
     }
     
     .hero {
@@ -590,7 +599,8 @@ footer h2 {
     }
 
     .hero .title {
-        font-size: 3.5rem;
+        font-size: clamp(1.5rem, 7.5vw, 3.5rem);
+        white-space: nowrap;
     }
     
     .hero .pre-title {
