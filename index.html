@@ -23,7 +23,7 @@
 <body>
 
     <!-- Background Music -->
-    <audio id="bg-music" loop>
+    <audio id="bg-music" loop autoplay>
         <source src="assets/music.mp3" type="audio/mpeg">
         Tu navegador no soporta el elemento de audio.
     </audio>
@@ -63,23 +63,23 @@
 
     <!-- Parents & Godparents Section -->
     <section class="family container section-padding text-center" id="family">
-        <h2 style="font-family: var(--font-script); font-weight: normal; font-size: 4rem; color: var(--secondary-color); margin-bottom: 20px;">Con la Bendición de Nuestros Padres</h2>
+        <h2 class="script-title family-main-title">Con la Bendición de Nuestros Padres</h2>
         <div class="divider"></div>
-        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;">
+        <div class="family-flex-container">
             <div class="reveal">
-                <h3 style="color: var(--primary-color); margin-bottom: 10px; font-size: 2rem;">Padres de la Novia</h3>
-                <p style="font-size: 1.5rem; line-height: 1.4;">Claudia Guadalupe Aguirre Coahonte</p>
-                <p style="font-size: 1.5rem; line-height: 1.4;">Oscar Pineda Lozada</p>
+                <h3 class="family-role-title">Padres de la Novia</h3>
+                <p class="family-member-name">Claudia Guadalupe Aguirre Coahonte</p>
+                <p class="family-member-name">Oscar Pineda Lozada</p>
             </div>
             <div class="reveal">
-                <h3 style="color: var(--primary-color); margin-bottom: 10px; font-size: 2rem;">Padres del Novio</h3>
-                <p style="font-size: 1.5rem; line-height: 1.4;">Angelina Córdova García</p>
-                <p style="font-size: 1.5rem; line-height: 1.4;">Jaime Correa Correa</p>
+                <h3 class="family-role-title">Padres del Novio</h3>
+                <p class="family-member-name">Angelina Córdova García</p>
+                <p class="family-member-name">Jaime Correa Correa</p>
             </div>
         </div>
-        <div style="margin-top: 40px;" class="reveal">
-            <h3 style="color: var(--primary-color); margin-bottom: 10px; font-size: 2rem;">Padrinos</h3>
-            <p style="font-size: 1.5rem; line-height: 1.4;">Ángel Patiño y Lucila Osorio</p>
+        <div class="family-padrinos reveal">
+            <h3 class="family-role-title">Padrinos</h3>
+            <p class="family-member-name">Ángel Patiño y Lucila Osorio</p>
         </div>
     </section>
 
@@ -89,7 +89,7 @@
     <!-- Details Section -->
     <section class="details container section-padding" id="details">
         <div class="section-title text-center">
-            <h2>Detalles del Evento</h2>
+            <h2 class="script-title">Detalles del Evento</h2>
             <div class="divider"></div>
         </div>
         <div class="grid">
@@ -117,7 +117,7 @@
     <section class="itinerary-section section-padding" id="itinerary">
         <div class="container">
             <div class="section-title text-center reveal">
-                <h2>Itinerario</h2>
+                <h2 class="script-title">Itinerario</h2>
                 <div class="divider"></div>
             </div>
             <div class="timeline reveal">
@@ -186,8 +186,8 @@
     <section class="dress-code-section section-padding" id="dress-code">
         <div class="container text-center">
             <div class="section-title text-center reveal">
-                <h2 style="font-family: var(--font-script); font-weight: normal; font-size: 4.5rem; color: var(--secondary-color); margin-bottom: 10px;">Código de Vestimenta</h2>
-                <h3 style="font-family: var(--font-primary); font-size: 1.8rem; letter-spacing: 2px; color: var(--primary-color); text-transform: uppercase; margin-bottom: 20px;">Formal / Elegante</h3>
+                <h2 class="script-title dress-code-title">Código de Vestimenta</h2>
+                <h3 class="section-subtitle-elegant">Formal / Elegante</h3>
                 <div class="divider"></div>
             </div>
             <div class="dress-code-flex reveal">
@@ -212,11 +212,11 @@
     <!-- Gift Registry Section -->
     <section class="registry section-padding text-center" id="registry">
         <div class="container reveal">
-            <h2 style="font-family: var(--font-primary); color: var(--secondary-color); margin-bottom: 10px;">Mesa de Regalos</h2>
+            <h2 class="script-title registry-title">Mesa de Regalos</h2>
             <div class="divider"></div>
-            <p style="margin-bottom: 20px;">El mejor regalo es tu presencia, pero si deseas tener un detalle con nosotros:</p>
-            <i class="fa-solid fa-gift card-icon" style="display:block;"></i>
-            <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51982905" target="_blank" class="btn-primary" style="margin-top: 15px;">Ver Mesa en Liverpool</a>
+            <p class="registry-desc">El mejor regalo es tu presencia, pero si deseas tener un detalle con nosotros:</p>
+            <i class="fa-solid fa-gift card-icon registry-icon"></i>
+            <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51982905" target="_blank" class="btn-primary registry-btn">Ver Mesa en Liverpool</a>
         </div>
     </section>
 
@@ -249,8 +249,8 @@
 
     <!-- Photo Gallery Parallax -->
     <section class="photo-gallery-parallax" id="photo-grid">
-        <div class="section-title text-center reveal" style="padding-top: 50px;">
-            <h2>Nuestra Galería</h2>
+        <div class="section-title text-center reveal gallery-title-wrapper">
+            <h2 class="script-title">Nuestra Galería</h2>
             <div class="divider"></div>
         </div>
         <div class="parallax-section gallery-item-1"></div>
@@ -267,7 +267,7 @@
     <section class="rsvp section-padding" id="rsvp">
         <div class="container">
             <div class="rsvp-container reveal">
-                <h2>Confirma tu Asistencia</h2>
+                <h2 class="script-title rsvp-title">Confirma tu Asistencia</h2>
                 <p>Por favor, haznos saber si podrás acompañarnos en este día tan especial.</p>
                 <form id="rsvp-form" class="form">
                     <div class="form-group">

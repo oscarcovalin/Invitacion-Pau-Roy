@@ -39,11 +39,9 @@
 
 html {
     scroll-behavior: smooth;
-    font-size: 125%; /* Increase base font size for the entire site */
 }
 
 body {
-    font-size: 1.2rem; /* Ensure body text is larger */
     font-family: var(--font-secondary);
     color: var(--text-color);
     background-color: var(--bg-color);
@@ -120,11 +118,10 @@ a {
 }
 
 .hero .pre-title {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-style: italic;
-    margin-bottom: 15px;
-    letter-spacing: 3px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
 }
 
 .hero .title {
@@ -136,11 +133,10 @@ a {
 }
 
 .hero .date {
-    font-size: 2rem;
-    font-weight: 400;
+    font-size: 1.2rem;
+    font-weight: 300;
     margin-bottom: 40px;
-    letter-spacing: 2px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    letter-spacing: 1px;
 }
 
 /* Countdown */
@@ -258,7 +254,9 @@ a {
 }
 
 .card h3 {
-    font-size: 2rem;
+    font-family: var(--font-script);
+    font-weight: normal;
+    font-size: 2.6rem;
     margin-bottom: 15px;
     color: var(--secondary-color);
 }
@@ -313,6 +311,14 @@ a {
     padding: 40px 50px;
     flex-grow: 1;
     background-color: var(--white);
+}
+
+.timeline-content h3 {
+    font-family: var(--font-script);
+    font-weight: normal;
+    font-size: 2rem;
+    margin-bottom: 8px;
+    color: var(--secondary-color);
 }
 
 .ticket-title {
@@ -491,15 +497,95 @@ footer h2 {
 .gallery-item-4 { background-image: url('../assets/grid_4.jpg'); }
 .gallery-item-5 { background-image: url('../assets/grid_5.jpg'); }
 
+/* Custom responsive utility classes */
+.script-title {
+    font-family: var(--font-script);
+    font-weight: normal;
+    font-size: 4rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.family-flex-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.family-role-title {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 2rem;
+    font-family: var(--font-primary);
+}
+
+.family-member-name {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    font-family: var(--font-secondary);
+    color: var(--text-color);
+}
+
+.family-padrinos {
+    margin-top: 40px;
+}
+
+.section-subtitle-elegant {
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.registry-title {
+    font-family: var(--font-primary);
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    font-size: 3rem;
+}
+
+.registry-desc {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.registry-icon {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.registry-btn {
+    margin-top: 15px;
+}
+
+.gallery-title-wrapper {
+    padding-top: 50px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
-    .parallax-section {
-        height: 40vh;
-        background-attachment: fixed; /* Re-enabled for mobile parallax */
+    html {
+        font-size: 95%; /* Clean responsive base font scale! */
+    }
+
+    .parallax-section, .hero {
+        background-attachment: scroll !important; /* Fixed iOS parallax background bug */
+        background-position: center center !important;
+        height: 45vh;
     }
     
+    .hero {
+        height: 100vh; /* Keep hero full screen */
+    }
+
     .hero .title {
-        font-size: 3.8rem;
+        font-size: 3.5rem;
     }
     
     footer h2 {
@@ -508,6 +594,7 @@ footer h2 {
 
     .countdown-wrapper {
         flex-wrap: wrap;
+        gap: 10px;
     }
     
     .countdown-item {
@@ -519,28 +606,72 @@ footer h2 {
         font-size: 1.5rem;
     }
     
+    /* Responsive custom typography adjustments */
+    .script-title {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+
+    .family-role-title {
+        font-size: 1.5rem;
+    }
+
+    .family-member-name {
+        font-size: 1.15rem;
+    }
+
+    .section-subtitle-elegant {
+        font-size: 1.3rem;
+    }
+
+    .registry-title {
+        font-size: 2.2rem;
+    }
+
+    .card h3 {
+        font-size: 2.2rem;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.7rem;
+    }
+
+    /* Redesigned ticket card for robust mobile layouts */
     .ticket-card {
         flex-direction: column;
+        border-radius: 15px;
     }
     
     .ticket-card::after {
-        top: 220px;
-        left: 20px;
-        right: 20px;
-        bottom: auto;
-        width: auto;
-        height: 2px;
-        border-left: none;
-        border-top: 2px dashed #EFEBE4;
+        display: none; /* Hide absolute dashed line on mobile */
     }
     
     .ticket-left {
         width: 100%;
         padding: 30px;
+        border-bottom: 2px dashed #EFEBE4; /* Pure, bulletproof dashed border! */
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     
     .ticket-right {
-        padding: 30px;
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .ticket-title {
+        font-size: 2.2rem;
+    }
+
+    .guest-name {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .ticket-info {
+        justify-content: center;
+        gap: 30px;
     }
     
     .rsvp-container {
@@ -632,9 +763,11 @@ footer h2 {
 }
 
 .timeline-content h3 {
-    color: var(--secondary-color);
-    font-size: 1.4rem;
+    font-family: var(--font-script);
+    font-weight: normal;
+    font-size: 2rem;
     margin-bottom: 8px;
+    color: var(--secondary-color);
 }
 
 .timeline-content p {
@@ -723,41 +856,5 @@ footer h2 {
     
     .dress-code-flex {
         gap: 30px;
-    }
-}
-
-/* Floating Music Button */
-.music-btn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: var(--primary-color);
-    color: var(--white);
-    border: none;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    cursor: pointer;
-    z-index: 1000;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-
-.music-btn:hover {
-    transform: scale(1.1);
-    background-color: #7a6a4d;
-}
-
-.music-btn.playing i {
-    animation: spin 3s linear infinite;
-}
-
-@keyframes spin {
-    100% {
-        transform: rotate(360deg);
     }
 }

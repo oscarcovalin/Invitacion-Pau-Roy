@@ -55,8 +55,30 @@ document.addEventListener('DOMContentLoaded', function() {
     const bgMusic = document.getElementById('bg-music');
     let isPlaying = false;
 
+    function attemptPlay() {
+        if (!isPlaying && bgMusic) {
+            bgMusic.play().then(() => {
+                isPlaying = true;
+                if(musicBtn) musicBtn.classList.add('playing');
+            }).catch(function(error) {
+                console.log("Audio play failed, waiting for user interaction", error);
+            });
+        }
+    }
+
+    if (bgMusic) {
+        // Intentar reproducir automáticamente (el navegador puede bloquearlo)
+        attemptPlay();
+        
+        // Escuchar la primera interacción del usuario para desbloquear el audio
+        document.body.addEventListener('click', attemptPlay, { once: true });
+        document.body.addEventListener('touchstart', attemptPlay, { once: true });
+        document.body.addEventListener('scroll', attemptPlay, { once: true });
+    }
+
     if (musicBtn && bgMusic) {
-        musicBtn.addEventListener('click', function() {
+        musicBtn.addEventListener('click', function(e) {
+            e.stopPropagation(); // Evitar que el clic en el botón dispare el evento del body
             if (isPlaying) {
                 bgMusic.pause();
                 musicBtn.classList.remove('playing');
