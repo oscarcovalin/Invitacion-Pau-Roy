@@ -194,7 +194,7 @@ function initMobileParallax() {
                     let yPos = (scrolled - offset) * 0.25; // Velocidad de parallax más sutil para que no se salga de los bordes
                     
                     if(section.classList.contains('hero')) {
-                         section.style.setProperty('background-position', `center calc(25% + ${yPos}px)`, 'important');
+                         section.style.setProperty('background-position', `75% calc(25% + ${yPos}px)`, 'important');
                     } else {
                          section.style.setProperty('background-position', `center calc(50% + ${yPos}px)`, 'important');
                     }
