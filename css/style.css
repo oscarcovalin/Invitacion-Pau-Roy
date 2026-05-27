@@ -118,10 +118,11 @@ a {
 }
 
 .hero .pre-title {
-    font-size: 1.5rem;
+    font-size: 2.2rem;
     font-style: italic;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .hero .title {
@@ -133,10 +134,11 @@ a {
 }
 
 .hero .date {
-    font-size: 1.2rem;
-    font-weight: 300;
+    font-size: 1.8rem;
+    font-weight: 400;
     margin-bottom: 40px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 /* Countdown */
@@ -543,10 +545,11 @@ footer h2 {
 }
 
 .registry-title {
-    font-family: var(--font-primary);
+    font-family: var(--font-script);
     color: var(--secondary-color);
     margin-bottom: 10px;
-    font-size: 3rem;
+    font-size: 4rem;
+    font-weight: normal;
 }
 
 .registry-desc {
@@ -574,18 +577,28 @@ footer h2 {
         font-size: 95%; /* Clean responsive base font scale! */
     }
 
-    .parallax-section, .hero {
+    .parallax-section {
         background-attachment: scroll !important; /* Fixed iOS parallax background bug */
         background-position: center center !important;
         height: 45vh;
     }
     
     .hero {
+        background-attachment: scroll !important;
+        background-position: center 25% !important; /* 25% enfoca más hacia la parte superior/rostros */
         height: 100vh; /* Keep hero full screen */
     }
 
     .hero .title {
         font-size: 3.5rem;
+    }
+    
+    .hero .pre-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero .date {
+        font-size: 1.5rem;
     }
     
     footer h2 {
@@ -625,7 +638,7 @@ footer h2 {
     }
 
     .registry-title {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
 
     .card h3 {
